@@ -19,7 +19,9 @@ public class Ladderklimmen extends Attractie{
 		omzet += prijs;
 		aantalKaartjes++;
 		super.omzet += prijs;
-		super.aantalKaartjes += aantalKaartjes;
+		super.aantalKaartjes++;
+		super.attOmzet(this);
+		super.attNaam(this);
 	}
 	
 }

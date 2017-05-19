@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class Kermis1 {
 	public static void main(String [] args){
 		Scanner sc = new Scanner(System.in);
-		ArrayList<Attractie> attracties = new ArrayList<Attractie>();
 		Attractie start = new Attractie();
 		Botsauto botsauto = new Botsauto();
 		Spin spin = new Spin();
@@ -15,29 +14,23 @@ public class Kermis1 {
 		Hawaii hawaii = new Hawaii();
 		Ladderklimmen ladderklimmen = new Ladderklimmen();
 
-		attracties.add(botsauto); 
-		attracties.add(spin); 
-		attracties.add(spiegelpaleis); 
-		attracties.add(spookhuis); 
-		attracties.add(hawaii); 
-		attracties.add(ladderklimmen);
-
+		boolean stoppen = false;
 		System.out.println("Welkom bij de kermis! Geef een getal tussen de 1 en de 6 om een attractie te bezoeken.");
-		for(int  i = 0;i<10;i++){
-			int input = sc.nextInt();
-			for(Attractie tijdelijk : attracties){
-				if (input == tijdelijk.geefNummer()){
-					tijdelijk.noemAttractie();
-					tijdelijk.katchingKassa();
-					System.out.println(tijdelijk.geefOmzet());
-					System.out.println(start.omzet);
-					System.out.println(start.aantalKaartjes);
-				}else{
-					tijdelijk.noemNietAttractie();
-				}
+		while(!stoppen){
+			String input = sc.next();
+			switch(input){
+			case "1": botsauto.noemAttractie();botsauto.katchingKassa(); break;
+			case "2": spin.noemAttractie();spin.katchingKassa(); break;
+			case "3": spiegelpaleis.noemAttractie();spiegelpaleis.katchingKassa(); break;
+			case "4": spookhuis.noemAttractie();spookhuis.katchingKassa(); break;
+			case "5": hawaii.noemAttractie();hawaii.katchingKassa(); break;
+			case "6": ladderklimmen.noemAttractie();ladderklimmen.katchingKassa(); break;
+			case "stoppen": stoppen = true; break;
+			case "o": System.out.println(start.geefOmzet()); System.out.println(start.geefKOmzet());; break;
+			case "k": System.out.println(start.geefAantalKaartjes()); break;
+			default: System.out.println("Welkom bij de kermis! Geef een getal tussen de 1 en de 6 om een attractie te bezoeken. o voor omzet en k voor het aantal kaartjes. Om te stoppen typ stoppen.");
 			}
-		}
-		
+		}		
 	}
 }
 ///////// Weekopdracht
