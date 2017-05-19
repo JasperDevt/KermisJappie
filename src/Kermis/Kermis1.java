@@ -1,7 +1,44 @@
 package Kermis;
 
-public class Kermis1 {
+import java.util.ArrayList;
+import java.util.Scanner;
 
+public class Kermis1 {
+	public static void main(String [] args){
+		Scanner sc = new Scanner(System.in);
+		ArrayList<Attractie> attracties = new ArrayList<Attractie>();
+		Attractie start = new Attractie();
+		Botsauto botsauto = new Botsauto();
+		Spin spin = new Spin();
+		Spiegelpaleis spiegelpaleis = new Spiegelpaleis();
+		Spookhuis spookhuis = new Spookhuis();
+		Hawaii hawaii = new Hawaii();
+		Ladderklimmen ladderklimmen = new Ladderklimmen();
+
+		attracties.add(botsauto); 
+		attracties.add(spin); 
+		attracties.add(spiegelpaleis); 
+		attracties.add(spookhuis); 
+		attracties.add(hawaii); 
+		attracties.add(ladderklimmen);
+
+		System.out.println("Welkom bij de kermis! Geef een getal tussen de 1 en de 6 om een attractie te bezoeken.");
+		for(int  i = 0;i<10;i++){
+			int input = sc.nextInt();
+			for(Attractie tijdelijk : attracties){
+				if (input == tijdelijk.geefNummer()){
+					tijdelijk.noemAttractie();
+					tijdelijk.katchingKassa();
+					System.out.println(tijdelijk.geefOmzet());
+					System.out.println(start.omzet);
+					System.out.println(start.aantalKaartjes);
+				}else{
+					tijdelijk.noemNietAttractie();
+				}
+			}
+		}
+		
+	}
 }
 ///////// Weekopdracht
 //Weekopdracht 2 - Kermis
