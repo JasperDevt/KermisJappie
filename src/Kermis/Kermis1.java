@@ -1,6 +1,5 @@
 package Kermis;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Kermis1 {
@@ -26,8 +25,8 @@ public class Kermis1 {
 			case "5": hawaii.noemAttractie();hawaii.katchingKassa(); break;
 			case "6": ladderklimmen.noemAttractie();ladderklimmen.katchingKassa(); break;
 			case "stoppen": stoppen = true; break;
-			case "o": System.out.println(start.geefOmzet()); System.out.println(start.geefKOmzet());; break;
-			case "k": System.out.println(start.geefAantalKaartjes()); break;
+			case "o": System.out.println(start.geefOmzet()); System.out.println(start.geefSubOmzet()); break;
+			case "k": System.out.println(start.geefAantalKaartjes()); System.out.println(start.geefSubAantalKaartjes()); break;
 			default: System.out.println("Welkom bij de kermis! Geef een getal tussen de 1 en de 6 om een attractie te bezoeken. o voor omzet en k voor het aantal kaartjes. Om te stoppen typ stoppen.");
 			}
 		}		

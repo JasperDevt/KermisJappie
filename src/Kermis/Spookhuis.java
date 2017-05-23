@@ -15,12 +15,16 @@ public class Spookhuis extends Attractie {
 	double geefOmzet(){
 		return omzet;
 	}
+	int geefAantalKaartjes(){
+		return aantalKaartjes;
+	}
 	void katchingKassa(){
 		omzet += prijs;
 		aantalKaartjes++;
 		super.omzet += prijs;
 		super.aantalKaartjes++;
-		super.attOmzet(this);
-		super.attNaam(this);
+		super.setOmzet(this);
+		super.setNaam(this);
+		super.setAantalKaartjes(this);
 	}
 }

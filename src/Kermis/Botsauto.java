@@ -1,7 +1,7 @@
 package Kermis;
 
 public class Botsauto extends Attractie {
-	double omzet;
+	double omzet = 10;
 	int aantalKaartjes;
 	double prijs = 2.5;
 	String naam = "Botsauto";
@@ -15,13 +15,17 @@ public class Botsauto extends Attractie {
 	double geefOmzet(){
 		return omzet;
 	}
+	int geefAantalKaartjes(){
+		return aantalKaartjes;
+	}
 	void katchingKassa(){
 		omzet += prijs;	
 		aantalKaartjes++;
 		super.omzet += prijs;
 		super.aantalKaartjes++;
-		super.attOmzet(this);
-		super.attNaam(this);
+		super.setOmzet(this);
+		super.setNaam(this);
+		super.setAantalKaartjes(this);
 	}
 	
 }

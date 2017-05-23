@@ -1,9 +1,10 @@
 package Kermis;
 
-public class Attractie {
+public class Attractie extends Pretpaleis {
 	static double omzet;
 	static int aantalKaartjes;
 	static double attomzet;
+	static int attaantalkaartjes;
 	static String naam;
 	double prijs;	
 	int nummer;
@@ -22,13 +23,17 @@ public class Attractie {
 		return aantalKaartjes;
 	}
 	
-	double geefKOmzet(){
-		System.out.print("De lokale omzet van de attractie " + geefNaam() + " is: ");
+	double geefSubOmzet(){
+		System.out.print("De omzet van de attractie " + geefNaam() + " is: ");
 		return attomzet;
+	}
+	int geefSubAantalKaartjes(){
+		System.out.print("Het aantal verkochte kaartjes van de attractie " + geefNaam() + " is: ");
+		return attaantalkaartjes;
 	}
 	//////////
 	void noemAttractie(){
-		System.out.println("U bent bij de attractie: " + geefNaam() + " met nummer " + geefNummer());
+		System.out.println("U bent nu bij de attractie: " + geefNaam() + " met nummer " + geefNummer());
 	}
 	void noemNietAttractie(){
 		System.out.println("U bent niet bij de attractie: " + geefNaam() + " met nummer " + geefNummer());
@@ -37,10 +42,13 @@ public class Attractie {
 		omzet += prijs;
 		aantalKaartjes++;
 	}
-	void attOmzet(Attractie att){
-		this.attomzet = att.geefOmzet();
+	void setOmzet(Attractie sub){
+		this.attomzet = sub.geefOmzet();
 	}
-	void attNaam (Attractie att){
-		this.naam = att.geefNaam();
+	void setNaam (Attractie sub){
+		this.naam = sub.geefNaam();
+	}
+	void setAantalKaartjes(Attractie sub){
+		this.attaantalkaartjes = sub.geefAantalKaartjes();
 	}
 }
