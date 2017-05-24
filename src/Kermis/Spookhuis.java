@@ -12,10 +12,10 @@ public class Spookhuis extends Attractie {
 	String geefNaam(){
 		return naam;
 	}
-	double geefOmzet(){
+	public double geefOmzet(){
 		return omzet;
 	}
-	int geefAantalKaartjes(){
+	public int geefAantalKaartjes(){
 		return aantalKaartjes;
 	}
 	void katchingKassa(){

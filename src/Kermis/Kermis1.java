@@ -12,9 +12,14 @@ public class Kermis1 {
 		Spookhuis spookhuis = new Spookhuis();
 		Hawaii hawaii = new Hawaii();
 		Ladderklimmen ladderklimmen = new Ladderklimmen();
+		
+		Oliebollenkraam oliebollenkraam = new Oliebollenkraam();
+		Frietkraam frietkraam = new Frietkraam();
+		Mueslikraam mueslikraam = new Mueslikraam();
+		Shoarmatent shoarmatent = new Shoarmatent();
 
 		boolean stoppen = false;
-		System.out.println("Welkom bij de kermis! Geef een getal tussen de 1 en de 6 om een attractie te bezoeken.");
+		System.out.println("Welkom bij de kermis! Geef een getal tussen de 1 en de 6 om een attractie te bezoeken. Kies o voor omzet en k voor het aantal kaartjes van de attracties. Kies respectievelijk ok en c voor de omzet van de kraampjes en het aantal consumpties. Om te stoppen typ stoppen.");
 		while(!stoppen){
 			String input = sc.next();
 			switch(input){
@@ -24,10 +29,16 @@ public class Kermis1 {
 			case "4": spookhuis.noemAttractie();spookhuis.katchingKassa(); break;
 			case "5": hawaii.noemAttractie();hawaii.katchingKassa(); break;
 			case "6": ladderklimmen.noemAttractie();ladderklimmen.katchingKassa(); break;
+			case "11": oliebollenkraam.bezoek();break;
+			case "22": frietkraam.bezoek();break;
+			case "33": mueslikraam.bezoek();break;
+			case "44": shoarmatent.bezoek();break;
 			case "stoppen": stoppen = true; break;
 			case "o": System.out.println(start.geefOmzet()); System.out.println(start.geefSubOmzet()); break;
 			case "k": System.out.println(start.geefAantalKaartjes()); System.out.println(start.geefSubAantalKaartjes()); break;
-			default: System.out.println("Welkom bij de kermis! Geef een getal tussen de 1 en de 6 om een attractie te bezoeken. o voor omzet en k voor het aantal kaartjes. Om te stoppen typ stoppen.");
+			case "ok": Kraampjes.geefTotaalOmzet();Kraampjes.getLaatsteKraamOmzet();break;
+			case "c": Kraampjes.geefTotaalAantalConsumpties();Kraampjes.getAantalConsumptiesKraampje();break;
+			default: System.out.println("Word niet herkent! Geef een getal tussen de 1 en de 6 om een attractie te bezoeken. Kies o voor omzet en k voor het aantal kaartjes van de attracties. Kies respectievelijk ok en c voor de omzet van de kraampjes en het aantal consumpties. Om te stoppen typ stoppen.");
 			}
 		}		
 	}

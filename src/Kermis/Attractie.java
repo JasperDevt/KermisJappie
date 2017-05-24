@@ -1,6 +1,6 @@
 package Kermis;
 
-public class Attractie extends Pretpaleis {
+public class Attractie {
 	static double omzet;
 	static int aantalKaartjes;
 	static double attomzet;
@@ -14,11 +14,11 @@ public class Attractie extends Pretpaleis {
 	String geefNaam(){
 		return naam;
 	}
-	double geefOmzet(){
+	public double geefOmzet(){
 		System.out.print("De totale omzet bedraagt: ");
 		return omzet;
 	}
-	int geefAantalKaartjes(){
+	public int geefAantalKaartjes(){
 		System.out.print("Het totaal aantal verkochte kaartjes: ");
 		return aantalKaartjes;
 	}

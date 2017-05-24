@@ -1,5 +1,4 @@
 package Kermis;
 
-public abstract class Pretpaleis {
-	
+public class Pretpaleis {
 }
